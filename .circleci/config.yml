@@ -23,8 +23,7 @@ jobs:
       # Login to Azure Container Registry
       - run:
           name: Azure Container Registry Login
-          command: echo "$AZURE_CONTAINER_REGISTRY_PASSWORD" | az login --username sieusaongaytho@gmail.com --password phung60201982
-          az acr login -n containeregistrytest --expose-token
+          command: echo "$AZURE_CONTAINER_REGISTRY_PASSWORD" | az login --username sieusaongaytho@gmail.com --password phung60201982 | az acr login -n containeregistrytest --expose-token
 
 
       # Build Docker images
