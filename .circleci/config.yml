@@ -41,7 +41,9 @@ jobs:
           name: List directories
           command: |
             ls -d */
-
+      - run:
+          name: Move to desired directory
+          command: cd ~/project/AspNetDistributedCaching/
       # Build Docker images
       - run:
           name: Build Docker Images
