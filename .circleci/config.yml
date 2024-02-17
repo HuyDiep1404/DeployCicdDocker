@@ -61,7 +61,7 @@ jobs:
             docker push containerregistrytest1.azurecr.io/rediscommander/redis-commander:latest
             docker push containerregistrytest1.azurecr.io/mongo:latest
             docker push containerregistrytest1.azurecr.io/mongo-express:latest
-            docker push containerregistrytest1.azurecr.io/edis:6-alpine 
+            docker push containerregistrytest1.azurecr.io/redis:6-alpine 
 
 workflows:
   version: 2
