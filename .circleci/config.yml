@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Azure Container Registry Login
           command: |
-          az login \
+                az login \
                 --service-principal \
                 --user 1ae5290a-5365-436b-bc37-3bfb556cccb3 \
                 --tenant 15aeef68-4238-42b3-bf77-9d4ffe8b7c5f \
