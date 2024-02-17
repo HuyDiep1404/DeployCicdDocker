@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Build Docker Images
           command: |
-            docker-compose build
+          echo  $CIRCLE_WORKING_DIRECTORY | docker-compose build
 
       # Push Docker images to Azure Container Registry
       - run:
