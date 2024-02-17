@@ -51,10 +51,9 @@ jobs:
       - run:
           name: Push Docker Images to ACR
           command: |
-            docker-compose push mongodb
-            docker-compose push mongo-express
-            docker-compose push redis-commander
-            docker-compose push redis
+            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p HtICsNVIIp3n3auKICInfRM/q2+J89Ez8rc09vnLz/+ACRC+F2Rh 
+            cd ~/project/AspNetDistributedCaching 
+            docker-compose push
 
 workflows:
   version: 2
