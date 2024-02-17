@@ -37,18 +37,12 @@ jobs:
       - run:
           name: Show current working directory
           command: echo $CIRCLE_WORKING_DIRECTORY
-      
-      - run:
-          name: Move to desired directory
-          command: cd ~/project/AspNetDistributedCaching/
-      - run:
-          name: List directories
-          command: |
-            ls
       # Build Docker images
       - run:
           name: Build Docker Images
           command: |
+          cd ~/project/AspNetDistributedCaching/ |
+          ls|
             docker-compose build
 
       # Push Docker images to Azure Container Registry
