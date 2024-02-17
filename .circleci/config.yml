@@ -55,7 +55,13 @@ jobs:
             cd ~/project/AspNetDistributedCaching 
             docker images
             docker tag rediscommander/redis-commander:latest containerregistrytest1.azurecr.io/rediscommander/redis-commander:latest
+            docker tag mongo:latest containerregistrytest1.azurecr.io/mongo:latest
+            docker tag mongo-express:latest containerregistrytest1.azurecr.io/mongo-express:latest
+            docker tag redis:6-alpine containerregistrytest1.azurecr.io/redis:6-alpine
             docker push containerregistrytest1.azurecr.io/rediscommander/redis-commander:latest
+            docker push containerregistrytest1.azurecr.io/mongo:latest
+            docker push containerregistrytest1.azurecr.io/mongo-express:latest
+            docker push containerregistrytest1.azurecr.io/edis:6-alpine 
 
 workflows:
   version: 2
