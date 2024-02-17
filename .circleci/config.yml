@@ -46,6 +46,7 @@ jobs:
             docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p HtICsNVIIp3n3auKICInfRM/q2+J89Ez8rc09vnLz/+ACRC+F2Rh 
             cd ~/project/AspNetDistributedCaching 
             echo $CIRCLE_WORKING_DIRECTORY
+            ls
             docker-compose up -d 
 
       # Push Docker images to Azure Container Registry
