@@ -24,6 +24,7 @@ jobs:
       - run:
           name: Azure Container Registry Login
           command: |
+           echo 3 |
            echo ${AZURE_CLIENT_ID} |
            echo ${AZURE_TENANT_ID} |
            echo ${CIRCLE_OIDC_TOKEN} |
