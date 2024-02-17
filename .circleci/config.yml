@@ -34,11 +34,14 @@ jobs:
           name: Login to Azure Container Registry
           command: |
             az acr login -n containerregistrytest1 --expose-token
+      - run:
+          name: Show current working directory
+          command: echo $CIRCLE_WORKING_DIRECTORY
       # Build Docker images
       - run:
           name: Build Docker Images
           command: |
-          echo  $CIRCLE_WORKING_DIRECTORY | docker-compose build
+            docker-compose build
 
       # Push Docker images to Azure Container Registry
       - run:
