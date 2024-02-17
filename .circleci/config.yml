@@ -26,7 +26,7 @@ jobs:
           command: |
                 az login \
                 --service-principal \
-                --user "6c9c3659-3611-4bd1-836c-339ceef0973b" \
+                --user "1ae5290a-5365-436b-bc37-3bfb556cccb3" \
                 --tenant "15aeef68-4238-42b3-bf77-9d4ffe8b7c5f" \
                 --federated-token "${CIRCLE_OIDC_TOKEN}" 
 
