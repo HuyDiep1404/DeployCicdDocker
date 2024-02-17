@@ -27,7 +27,7 @@ jobs:
                 --service-principal \
                 --user "${AZURE_CLIENT_ID}" \
                 --tenant "${AZURE_TENANT_ID}" \
-                --federated-token "${CIRCLE_OIDC_TOKEN}" | az acr login -n containerregistrytest1
+                --federated-token "${CIRCLE_OIDC_TOKEN}" #| az acr login -n containerregistrytest1 --expose-token
 
 
       # Build Docker images
