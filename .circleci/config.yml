@@ -13,12 +13,6 @@ jobs:
       # Install Docker client
       - setup_remote_docker:
             docker_layer_caching: true
-      - run:
-          name: Install Docker client
-          command: |
-            sudo apt update
-            sudo apt install -y docker.io
-
       # Install Azure CLI
       - run:
           name: Install Azure CLI
