@@ -51,7 +51,10 @@ jobs:
       - run:
           name: Push Docker Images to ACR
           command: |
-            docker-compose push
+            docker-compose push mongodb
+            docker-compose push mongo-express
+            docker-compose push redis-commander
+            docker-compose push redis
 
 workflows:
   version: 2
