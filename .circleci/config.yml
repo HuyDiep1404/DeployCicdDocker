@@ -54,8 +54,8 @@ jobs:
             docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p HtICsNVIIp3n3auKICInfRM/q2+J89Ez8rc09vnLz/+ACRC+F2Rh 
             cd ~/project/AspNetDistributedCaching 
             docker images
-            docker tag redis-commander containeregistrytest.azurecr.io/redis-commander
-            docker-compose push redis-commander
+            docker tag redis-commander:latest containeregistrytest.azurecr.io/redis-commander:latest
+            docker push containeregistrytest.azurecr.io/redis-commander:latest
 
 workflows:
   version: 2
