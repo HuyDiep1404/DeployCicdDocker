@@ -7,8 +7,10 @@ jobs:
 
     steps:
       - checkout
-
+      - docker/install-docker-tools
       # Install Docker client
+      - setup_remote_docker:
+            docker_layer_caching: true
       - run:
           name: Install Docker client
           command: |
