@@ -41,8 +41,8 @@ jobs:
       - run:
           name: Build Docker Images
           command: |
-          cd ~/project/AspNetDistributedCaching/ |
-          ls|
+            cd ~/project/AspNetDistributedCaching/ |
+            ls|
             docker-compose build
 
       # Push Docker images to Azure Container Registry
