@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LxkObHorIejbd9/iLP4XgcDwVOVjn1rKmvWpEhL3rZDv8FtbzICfoztQ6pHUWJa0aWhoMyKCjDwhFgMscYzA8g==",
+  "dgSpecHash": "4uM4gciimN78rwaNvRbzezAxoRjHIDVHAWVj6Pvtj0GWJBuDOU0rYxEKXoUayYvtn4fWTiwgtD57PwAeq5zodg==",
   "success": true,
-  "projectFilePath": "D:\\Example\\deploycicd\\DeployCicdDocker\\AspNetDistributedCaching\\AspNetDistributedCaching.csproj",
+  "projectFilePath": "D:\\Example\\deploycicd\\dockerregistries\\DeployCicdDocker\\AspNetDistributedCaching\\AspNetDistributedCaching.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

@@ -23,8 +23,7 @@ jobs:
       # Login to Azure Container Registry
       - run:
           name: Azure Container Registry Login
-          command: echo "$AZURE_CONTAINER_REGISTRY_PASSWORD" | 
-          az login \
+          command: echo "$AZURE_CONTAINER_REGISTRY_PASSWORD" | az login \
                 --service-principal \
                 --user "${AZURE_CLIENT_ID}" \
                 --tenant "${AZURE_TENANT_ID}" \
