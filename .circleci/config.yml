@@ -6,6 +6,10 @@ jobs:
       - image: circleci/python:3.8
 
     steps:
+     build-docker-image:
+      executor:
+        name: docker/docker
+        tag: "3.6"
       - checkout
       - docker/install-docker-tools
       # Install Docker client
