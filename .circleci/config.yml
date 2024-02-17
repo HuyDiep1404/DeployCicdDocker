@@ -3,12 +3,11 @@ version: 2.1
 orbs:
   docker: circleci/docker@2.1.2
 jobs:
-  build-docker-image:
+  build:
       executor:
         name: docker/docker
         tag: "3.6"
     steps:
-
       - checkout
       - docker/install-docker-tools
       # Install Docker client
