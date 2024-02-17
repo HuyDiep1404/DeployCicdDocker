@@ -53,8 +53,8 @@ jobs:
           command: |
             docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p HtICsNVIIp3n3auKICInfRM/q2+J89Ez8rc09vnLz/+ACRC+F2Rh 
             cd ~/project/AspNetDistributedCaching 
-            docker images
             docker ps
+            docker images            
             docker tag rediscommander/redis-commander:latest containerregistrytest1.azurecr.io/rediscommander/redis-commander:latest
             docker tag mongo:latest containerregistrytest1.azurecr.io/mongo:latest
             docker tag mongo-express:latest containerregistrytest1.azurecr.io/mongo-express:latest
