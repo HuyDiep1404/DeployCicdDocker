@@ -63,6 +63,8 @@ jobs:
             docker push containerregistrytest1.azurecr.io/mongo:latest
             docker push containerregistrytest1.azurecr.io/mongo-express:latest
             docker push containerregistrytest1.azurecr.io/redis:6-alpine 
+            docker run -p 8081:8081 -d containerregistrytest1.azurecr.io/mongo-express:latest
+            docker run -p 27017:27017 -d containerregistrytest1.azurecr.io/mongo:latest
 
 workflows:
   version: 2
