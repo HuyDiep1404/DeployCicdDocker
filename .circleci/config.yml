@@ -1,15 +1,14 @@
 version: 2.1
 
+orbs:
+  docker: circleci/docker@2.1.2
 jobs:
-  build:
-    docker:
-      - image: circleci/python:3.8
-
-    steps:
-     build-docker-image:
+  build-docker-image:
       executor:
         name: docker/docker
         tag: "3.6"
+    steps:
+
       - checkout
       - docker/install-docker-tools
       # Install Docker client
