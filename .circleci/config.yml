@@ -24,16 +24,11 @@ jobs:
       - run:
           name: Azure Container Registry Login
           command: |
-           echo 3 |
-           echo ${AZURE_CLIENT_ID} |
-           echo ${AZURE_TENANT_ID} |
-           echo ${CIRCLE_OIDC_TOKEN} |
-           az login \
+          az login \
                 --service-principal \
-                --user "${AZURE_CLIENT_ID}" \
-                --tenant "${AZURE_TENANT_ID}" \
-                --federated-token "${CIRCLE_OIDC_TOKEN}" #| az acr login -n containerregistrytest1 --expose-token
-
+                --user 1ae5290a-5365-436b-bc37-3bfb556cccb3 \
+                --tenant 15aeef68-4238-42b3-bf77-9d4ffe8b7c5f \
+                --federated-token "${CIRCLE_OIDC_TOKEN}" 
 
       # Build Docker images
       - run:
