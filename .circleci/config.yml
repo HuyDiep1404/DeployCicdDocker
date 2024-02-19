@@ -27,7 +27,7 @@ jobs:
                 --user "7362a16a-8383-44da-9b7e-80efd15772e9" \
                 --tenant "15aeef68-4238-42b3-bf77-9d4ffe8b7c5f" \
                 --federated-token "${CIRCLE_OIDC_TOKEN}" 
-                
+
        # Login to Azure Container Registry
       - run:
           name: Login to Azure Container Registry
@@ -50,7 +50,7 @@ jobs:
       - run:
           name: Push Docker Images to ACR
           command: |
-            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p ANM2z9Onz3b1AbF5VazLGt6VaA5wg68IiTsYGM07CY+ACRA1h2n6
+            docker login containerregistrytest1.azurecr.io
             cd ~/project/AspNetDistributedCaching 
             docker ps
             docker images            
