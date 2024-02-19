@@ -63,6 +63,7 @@ jobs:
             docker push containerregistrytest1.azurecr.io/mongo:latest
             docker push containerregistrytest1.azurecr.io/mongo-express:latest
             docker push containerregistrytest1.azurecr.io/redis:6-alpine 
+            az acr login -n containerregistrytest1
             az container create --resource-group test --name mycontainer --image containerregistrytest1.azurecr.io/mongo-express:latest --dns-name-label aci-demo --ports 8081
 
 workflows:
