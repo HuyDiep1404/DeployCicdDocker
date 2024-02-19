@@ -24,7 +24,7 @@ jobs:
           command: |
                 az login \
                 --service-principal \
-                --user "1ae5290a-5365-436b-bc37-3bfb556cccb3" \
+                --user "7362a16a-8383-44da-9b7e-80efd15772e9" \
                 --tenant "15aeef68-4238-42b3-bf77-9d4ffe8b7c5f" \
                 --federated-token "${CIRCLE_OIDC_TOKEN}" 
        # Login to Azure Container Registry
