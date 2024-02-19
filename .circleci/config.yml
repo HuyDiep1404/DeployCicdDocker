@@ -33,6 +33,7 @@ jobs:
           name: Login to Azure Container Registry
           command: |
             az acr create --resource-group test --name containerregistrytest1 --sku Basic
+            az acr update -n containerregistrytest1 --admin-enabled true
             az acr login -n containerregistrytest1 --expose-token          
       - run:
           name: Show current working directory
@@ -62,7 +63,6 @@ jobs:
             docker push containerregistrytest1.azurecr.io/mongo:latest
             docker push containerregistrytest1.azurecr.io/mongo-express:latest
             docker push containerregistrytest1.azurecr.io/redis:6-alpine 
-            az acr login -n containerregistrytest1
             az container create --resource-group test --name mycontainer --image containerregistrytest1.azurecr.io/mongo-express:latest --dns-name-label aci-demo --ports 8081
 
 workflows:
