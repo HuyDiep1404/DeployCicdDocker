@@ -31,7 +31,8 @@ jobs:
       - run:
           name: Login to Azure Container Registry
           command: |
-            az acr login -n containerregistrytest1 --expose-token
+            az acr create --resource-group test --name containerregistrytest1 --sku Basic
+            az acr login -n containerregistrytest1           
       - run:
           name: Show current working directory
           command: echo $CIRCLE_WORKING_DIRECTORY
@@ -39,9 +40,6 @@ jobs:
       - run:
           name: Build Docker Images
           command: |
-            cd ~/project/AspNetDistributedCaching
-            ls
-            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p ANM2z9Onz3b1AbF5VazLGt6VaA5wg68IiTsYGM07CY+ACRA1h2n6
             cd ~/project/AspNetDistributedCaching 
             echo $CIRCLE_WORKING_DIRECTORY
             ls
