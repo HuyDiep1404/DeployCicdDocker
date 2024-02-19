@@ -41,7 +41,7 @@ jobs:
           command: |
             cd ~/project/AspNetDistributedCaching
             ls
-            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p HtICsNVIIp3n3auKICInfRM/q2+J89Ez8rc09vnLz/+ACRC+F2Rh 
+            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p ANM2z9Onz3b1AbF5VazLGt6VaA5wg68IiTsYGM07CY+ACRA1h2n6
             cd ~/project/AspNetDistributedCaching 
             echo $CIRCLE_WORKING_DIRECTORY
             ls
@@ -51,7 +51,7 @@ jobs:
       - run:
           name: Push Docker Images to ACR
           command: |
-            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p HtICsNVIIp3n3auKICInfRM/q2+J89Ez8rc09vnLz/+ACRC+F2Rh 
+            docker login containerregistrytest1.azurecr.io -u containerregistrytest1 -p ANM2z9Onz3b1AbF5VazLGt6VaA5wg68IiTsYGM07CY+ACRA1h2n6
             cd ~/project/AspNetDistributedCaching 
             docker ps
             docker images            
