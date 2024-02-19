@@ -33,7 +33,7 @@ jobs:
           name: Login to Azure Container Registry
           command: |
             az acr create --resource-group test --name containerregistrytest1 --sku Basic
-            az acr login -n containerregistrytest1           
+            az acr login -n containerregistrytest1 --expose-token          
       - run:
           name: Show current working directory
           command: echo $CIRCLE_WORKING_DIRECTORY
