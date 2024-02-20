@@ -45,7 +45,7 @@ jobs:
             cd ~/project/AspNetDistributedCaching 
             echo $CIRCLE_WORKING_DIRECTORY
             ls
-            docker-compose up -d
+            docker-compose up -d 
 
       # Push Docker images to Azure Container Registry
       - run:
@@ -63,7 +63,8 @@ jobs:
             docker push containerregistrytest1.azurecr.io/mongo:latest
             docker push containerregistrytest1.azurecr.io/mongo-express:latest
             docker push containerregistrytest1.azurecr.io/redis:6-alpine
-            az container create --resource-group test --registry-username 6234e69a-81f8-4bbd-bc4f-d58e4e893859 --registry-password KhH8Q~2CwgbR4537~3Ph3y_SC3S--3-aPplGiddg --name mycontainer --image containerregistrytest1.azurecr.io/mongo-express:latest  --ports 80 443 --dns-name-label contoso
+            az container create --resource-group test --registry-username 6234e69a-81f8-4bbd-bc4f-d58e4e893859 --registry-password KhH8Q~2CwgbR4537~3Ph3y_SC3S--3-aPplGiddg --name mycontainer --image containerregistrytest1.azurecr.io/mongo-express:latest --ports 8081
+            docker run -p 8081:8081 containerregistrytest1.azurecr.io/mongo-express:latest
 
 workflows:
   version: 2
