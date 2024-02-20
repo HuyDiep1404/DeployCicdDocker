@@ -24,7 +24,7 @@ jobs:
           command: |
                 az login \
                 --service-principal \
-                --user "7362a16a-8383-44da-9b7e-80efd15772e9" \
+                --user "6234e69a-81f8-4bbd-bc4f-d58e4e893859" \
                 --tenant "15aeef68-4238-42b3-bf77-9d4ffe8b7c5f" \
                 --federated-token "${CIRCLE_OIDC_TOKEN}" 
 
@@ -51,7 +51,7 @@ jobs:
       - run:
           name: Push Docker Images to ACR
           command: |
-            docker login containerregistrytest1.azurecr.io -u "7362a16a-8383-44da-9b7e-80efd15772e9" -p "NvC8Q~mFiZYYfTCDdW1eDvSNA5gJCK~HVUaLwaeJ"
+            docker login containerregistrytest1.azurecr.io -u "6234e69a-81f8-4bbd-bc4f-d58e4e893859" -p "KhH8Q~2CwgbR4537~3Ph3y_SC3S--3-aPplGiddg"
             cd ~/project/AspNetDistributedCaching 
             docker ps
             docker images            
@@ -62,9 +62,8 @@ jobs:
             docker push containerregistrytest1.azurecr.io/rediscommander/redis-commander:latest
             docker push containerregistrytest1.azurecr.io/mongo:latest
             docker push containerregistrytest1.azurecr.io/mongo-express:latest
-            docker push containerregistrytest1.azurecr.io/redis:6-alpine 
-            az acr login -n containerregistrytest1
-            az container create --resource-group test --name mycontainer --image containerregistrytest1.azurecr.io/mongo-express:latest --dns-name-label aci-demo --ports 8081
+            docker push containerregistrytest1.azurecr.io/redis:6-alpine
+            az container create --resource-group test --registry-username 6234e69a-81f8-4bbd-bc4f-d58e4e893859 --registry-password KhH8Q~2CwgbR4537~3Ph3y_SC3S--3-aPplGiddg --name mycontainer --image containerregistrytest1.azurecr.io/mongo-express:latest --ports 8081
 
 workflows:
   version: 2
