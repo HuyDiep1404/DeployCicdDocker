@@ -33,11 +33,13 @@ jobs:
           name: Login to Azure Container Registry
           command: |
             az acr create --resource-group test --name containerregistrytest1 --sku Basic
-            az acr update -n containerregistrytest1 --admin-enabled true
-            az acr login -n containerregistrytest1 --expose-token          
+               
       - run:
           name: Show current working directory
-          command: echo $CIRCLE_WORKING_DIRECTORY
+          command: |
+            echo $CIRCLE_WORKING_DIRECTORY
+            az acr update -n containerregistrytest1 --admin-enabled true
+            az acr login -n containerregistrytest1 --expose-token     
       # Build Docker images
       - run:
           name: Build Docker Images
