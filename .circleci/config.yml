@@ -45,7 +45,7 @@ jobs:
             cd ~/project/AspNetDistributedCaching 
             echo $CIRCLE_WORKING_DIRECTORY
             ls
-            docker-compose up -d 
+            docker-compose up -d
 
       # Push Docker images to Azure Container Registry
       - run:
