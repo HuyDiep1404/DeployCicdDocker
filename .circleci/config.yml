@@ -28,18 +28,11 @@ jobs:
                 --tenant "15aeef68-4238-42b3-bf77-9d4ffe8b7c5f" \
                 --federated-token "${CIRCLE_OIDC_TOKEN}" 
 
-       # Login to Azure Container Registry
+      # Login to Azure Container Registry
       - run:
           name: Login to Azure Container Registry
           command: |
-            az acr create --resource-group test --name containerregistrytest1 --sku Basic
-               
-      - run:
-          name: Show current working directory
-          command: |
-            echo $CIRCLE_WORKING_DIRECTORY
-            az acr update -n containerregistrytest1 --admin-enabled true
-            az acr login -n containerregistrytest1 --expose-token     
+            az acr create --resource-group test --name containerregistrytest1 --admin-enabled true --sku Basic
       # Build Docker images
       - run:
           name: Build Docker Images
@@ -47,7 +40,13 @@ jobs:
             cd ~/project/AspNetDistributedCaching 
             echo $CIRCLE_WORKING_DIRECTORY
             ls
-            docker-compose up -d
+            docker-compose up -d      
+      - run:
+          name: Show current working directory
+          command: |
+            echo $CIRCLE_WORKING_DIRECTORY
+            az acr login -n containerregistrytest1 --expose-token     
+      
       # Push Docker images to Azure Container Registry
       - run:
           name: Push Docker Images to ACR
